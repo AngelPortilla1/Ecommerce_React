@@ -1,7 +1,15 @@
+import Navbar from './components/Nabvar/Navbar';
 import './index.css';
 
 function App(){
-  return <h1 className='text-8xl text-green-300'>Encuentrame</h1>
+  return (
+    <>
+    <Navbar></Navbar>
+    <h1 className='text-8xl text-green-100'>Encuentrame</h1>)
+    </>
+
+  )
+  
 }
 
 
