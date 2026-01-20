@@ -5,7 +5,7 @@ function App(){
   return (
     <>
     <Navbar></Navbar>
-    <h1 className='text-8xl text-green-100'>Encuentrame</h1>)
+    <h1 className='text-sm text-green-100'>Encuentrame</h1>
     </>
 
   )
