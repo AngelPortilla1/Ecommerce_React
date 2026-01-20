@@ -29,6 +29,19 @@ const Cart = () => {
 
                         </div>
                 </div>
+                <div tabIndex={0} className="card card-compact dropdown-content bg-base-100-z-[1000] mt-3 w-52 shadow">
+                    <div className="card-body">
+                        <span className='text-lg font-bold'>2 item</span>
+                        <span className="text-info">Subtotal: $300</span>
+                        <div className="card-actions">
+                            <button className="btn btn-primary btn-block">
+                                Ver Carrito
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 

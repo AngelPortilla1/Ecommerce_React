@@ -1,8 +1,10 @@
 import Cart from './Cart.jsx';
+import AuthButton from './authButton.jsx';
 
 const Navbar = () => {
     return(
         <header>
+            <AuthButton/> 
             <nav className="navbar bg-base-100 shadow-sm lg:rounded-box w-full">
                 <div className='navbar-start'>
                     <a className='btn btn-ghost text-xl'>
