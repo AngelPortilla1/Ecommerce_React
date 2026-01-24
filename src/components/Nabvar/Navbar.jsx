@@ -1,4 +1,5 @@
 import Cart from './Cart.jsx';
+import UserDropDown from './UserDropDown.jsx';
 import AuthButton from './authButton.jsx';
 
 const Navbar = () => {
@@ -12,9 +13,10 @@ const Navbar = () => {
                     </a>
 
                 </div>
-                <div className='nabvar-end gap-3'>
+                <div className='navbar-end gap-3'>
                     <a className='btn btn-primary'>Dashboard</a>
                     <Cart />
+                    <UserDropDown/>
 
                 </div>
             </nav>
