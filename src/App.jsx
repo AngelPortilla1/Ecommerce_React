@@ -1,20 +1,21 @@
 import Home from './pages/Home';
 import './index.css';
 
-import {Routes,Route } from 'react-router'
+import {Routes,Route } from 'react-router-dom'
 import Layout from './layout/Layout';
 
 function App(){
   return (
     <Routes>
-        <Route element={Layout}></Route>
-          <Route path="/" element={<Home></Home>}></Route>
-          <h1 className='text-sm text-green-100'>Encuentrame</h1>
+        <Route element={<Layout/>}>
+            <Route path="/" element={<Home/>}></Route>
+            
+          </Route>
     </Routes>
     
     
 
-  )
+  );
   
 }
 
