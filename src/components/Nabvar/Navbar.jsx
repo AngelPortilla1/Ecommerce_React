@@ -9,7 +9,7 @@ const Navbar = () => {
             <AuthButton/> 
             <nav className="navbar bg-base-100 shadow-sm lg:rounded-box w-full">
                 <div className='navbar-start'>
-                    <Link className='btn btn-ghost text-xl' to='/diney'>
+                    <Link className='btn btn-ghost text-xl' to='/home'>
                         Ecommerce
                     </Link>
 
