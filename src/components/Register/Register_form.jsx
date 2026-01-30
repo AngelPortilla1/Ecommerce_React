@@ -10,6 +10,9 @@ const RegisterForm = ()=>{
     const [showPassword, setShowPassword] = useState(false)
     
     const onSubmit = (data) => {
+        console.log(data)
+
+        reset();
         // Registrando al usuario
     }
 

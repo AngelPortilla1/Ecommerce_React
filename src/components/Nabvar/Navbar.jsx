@@ -1,6 +1,7 @@
 import Cart from './Cart.jsx';
 import UserDropDown from './UserDropDown.jsx';
 import AuthButton from './authButton.jsx';
+import { Link} from 'react-router-dom';
 
 const Navbar = () => {
     return(
@@ -8,9 +9,9 @@ const Navbar = () => {
             <AuthButton/> 
             <nav className="navbar bg-base-100 shadow-sm lg:rounded-box w-full">
                 <div className='navbar-start'>
-                    <a className='btn btn-ghost text-xl'>
+                    <Link className='btn btn-ghost text-xl' to='/diney'>
                         Ecommerce
-                    </a>
+                    </Link>
 
                 </div>
                 <div className='navbar-end gap-3'>
