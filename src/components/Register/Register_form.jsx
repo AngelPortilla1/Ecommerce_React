@@ -112,6 +112,9 @@ const RegisterForm = ()=>{
                             <p className="text-white-500 text-sm mt-1">{errors.password.message}</p>
                         )}
             </div>
+                <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-lg transition duration-200" >Crear cuenta
+                </button>  
+
             
         </form>
     )
