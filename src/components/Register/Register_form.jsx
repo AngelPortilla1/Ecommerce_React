@@ -23,7 +23,7 @@ const RegisterForm = ()=>{
                 <input {...register("username",{
                     required: "El nombre de usuario es obligatorio",
                     minLength:{value: 3, message: "El nombre de usuario debe tener al menos 3 caracteres"},
-                    maxLength:{value: 20, message: "El nombre de usuario debe tener como maximo 20 caracteres"}
+                    maxLength:{value: 254, message: "El nombre de usuario debe tener como maximo 254 caracteres"}
                 })}
                         className=" w-full
                                     rounded-lg
