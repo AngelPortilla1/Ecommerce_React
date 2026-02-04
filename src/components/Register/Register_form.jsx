@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 
-
+//Recordar verificar maxymin lenght junto con el modelo de mongodb-Username
 const RegisterForm = ()=>{
     const {register, handleSubmit,formState:{errors},reset  } = useForm({
         mode:'onChange'
@@ -23,7 +23,7 @@ const RegisterForm = ()=>{
                 <input {...register("username",{
                     required: "El nombre de usuario es obligatorio",
                     minLength:{value: 3, message: "El nombre de usuario debe tener al menos 3 caracteres"},
-                    maxLength:{value: 254, message: "El nombre de usuario debe tener como maximo 254 caracteres"}
+                    maxLength:{value: 29, message: "El nombre de usuario debe tener como maximo 29 caracteres"}
                 })}
                         className=" w-full
                                     rounded-lg
