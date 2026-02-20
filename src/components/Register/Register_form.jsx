@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
+import { RegisterService } from "../../services/auth_services"
 
 //Recordar verificar maxymin lenght junto con el modelo de mongodb-Username
 const RegisterForm = ()=>{
@@ -11,6 +12,7 @@ const RegisterForm = ()=>{
     
     const onSubmit = (data) => {
         console.log(data)
+        RegisterService(data);
 
         reset();
         // Registrando al usuario
