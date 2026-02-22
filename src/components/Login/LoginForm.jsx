@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
+import { LoginService } from "../../services/auth_services"
+import { useUSer } from "../../context/UserContext"
 
 
 const LoginForm = ()=>{
@@ -8,12 +10,22 @@ const LoginForm = ()=>{
         mode:'onChange'
     })
     const [showPassword, setShowPassword] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const { checkSession } = useUSer()
     
-    const onSubmit = (data) => {
-        console.log(data)
-
-        reset();
-        // Registrando al usuario
+    const onSubmit = async (data) => {
+        try {
+            setLoading(true)
+            await LoginService(data.email, data.password)
+            // Después del login exitoso, verificar la sesión
+            await checkSession()
+            reset()
+        } catch (error) {
+            console.error("Error al iniciar sesión:", error)
+            alert(error.message)
+        } finally {
+            setLoading(false)
+        }
     }
 
     return(
@@ -85,7 +97,10 @@ const LoginForm = ()=>{
                             <p className="text-white-500 text-sm mt-1">{errors.password.message}</p>
                         )}
             </div>
-                <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-lg transition duration-200" >Iniciar Sesion
+                <button type="submit" 
+                        disabled={loading}
+                        className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-white py-2 px-4 rounded-lg transition duration-200" >
+                    {loading ? 'Iniciando sesión...' : 'Iniciar Sesion'}
                 </button>  
 
             

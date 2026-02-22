@@ -1,5 +1,5 @@
 import { useContext,createContext, useState,useEffect } from "react";
-
+import { getProfileService } from "../services/auth_services";
 
 export const UserContext = createContext();
 
@@ -12,10 +12,13 @@ export const UserContextProvider = ({children}) => {
     const checkSession = async () => {
         try {
             setLoading(true);
-            //const userDate = await.getProfileService();
-            // setUser(userDate);
+            const userDate = await getProfileService();
+            setUser(userDate);
         }catch(error){
-            console.error("Error al verificar la sesión:", error);
+            // 401 es un caso normal cuando no hay autenticación, no es necesario loguear
+            if (error.message !== 'No autenticado') {
+                console.error("Error al verificar la sesión:", error);
+            }
             setUser(null);
         }finally {
             setLoading(false);
