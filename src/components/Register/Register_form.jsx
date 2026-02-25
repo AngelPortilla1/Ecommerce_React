@@ -1,14 +1,18 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { UserContext } from "../../context/UserContext"
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 import { RegisterService } from "../../services/auth_services"
+import { Navigate } from "react-router-dom"
 
 //Recordar verificar maxymin lenght junto con el modelo de mongodb-Username
 const RegisterForm = ()=>{
     const {register, handleSubmit,formState:{errors},reset  } = useForm({
         mode:'onChange'
     })
+    const {user} = useContext(UserContext)
     const [showPassword, setShowPassword] = useState(false)
+    const [redirect, setRredirect] = useState(false)
     
     const onSubmit = (data) => {
         console.log(data)
@@ -17,6 +21,14 @@ const RegisterForm = ()=>{
         reset();
         // Registrando al usuario
     }
+    if (redirect && user.isAdmin) {
+        //LLevarlo a la pagina admin
+    }
+
+    if( redirect && !user.isAdmin){
+        //Llevarlo a la pagina de usuario normal
+    }
+    console.log(user)
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}
