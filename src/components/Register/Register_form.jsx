@@ -4,22 +4,25 @@ import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 import { RegisterService } from "../../services/auth_services"
 import { Navigate } from "react-router-dom"
+import toast from "react-hot-toast"
 
 //Recordar verificar maxymin lenght junto con el modelo de mongodb-Username
 const RegisterForm = ()=>{
     const {register, handleSubmit,formState:{errors},reset  } = useForm({
         mode:'onChange'
     })
-    const {user} = useContext(UserContext)
+    const {user, checkSession} = useContext(UserContext)
     const [showPassword, setShowPassword] = useState(false)
-    const [redirect, setRredirect] = useState(false)
+    const [redirect, setRedirect] = useState(false)
     
-    const onSubmit = (data) => {
-        console.log(data)
-        RegisterService(data);
-
-        reset();
+    const onSubmit = async (data) => {
         // Registrando al usuario
+        const result = await RegisterService(data, reset, setRedirect, checkSession);
+        if (result.message){
+            toast.success('Registro exitoso');
+        }else {
+            toast.error("Error en el registro");
+        }
     }
     if (redirect && user.isAdmin) {
         //LLevarlo a la pagina admin
@@ -27,8 +30,8 @@ const RegisterForm = ()=>{
 
     if( redirect && !user.isAdmin){
         //Llevarlo a la pagina de usuario normal
+        return <Navigate to={'/home'} />
     }
-    console.log(user)
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}

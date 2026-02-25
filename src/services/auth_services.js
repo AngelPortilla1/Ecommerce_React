@@ -31,7 +31,7 @@ export const RegisterService = async (data, reset, setRedirect, checkSession) =>
         });
 
         if (response.status === 201 || response.status === 200) {
-            alert('Registro exitoso');
+            
             await checkSession();
             reset();
             setRedirect(true);
@@ -40,7 +40,12 @@ export const RegisterService = async (data, reset, setRedirect, checkSession) =>
             }
         }
     } catch (error) {
-        alert("Error en el registro: " + error.response?.data?.error);
+        const errorMessage = error.response?.data?.error || error.response?.data?.message || error.message || 'Error desconocido';
+        alert("Error en el registro: " + errorMessage);
+        return {
+            message: false
+        }
+        
     }
 };
 

@@ -6,6 +6,7 @@ import {Routes,Route } from 'react-router-dom'
 import Layout from './layout/Layout';
 import Login from './pages/Login';
 import { UserContextProvider } from './context/UserContext';
+import { Toaster } from 'react-hot-toast';
 
 
 function App(){
@@ -20,6 +21,7 @@ function App(){
             
           </Route>
     </Routes>
+    <Toaster position='top-right' reverseOrder={false} />
     </UserContextProvider>
     
     
