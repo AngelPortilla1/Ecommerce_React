@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { UserContext } from "../../context/UserContext"
+import { UserContext, useUSer } from "../../context/UserContext"
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 import { RegisterService } from "../../services/auth_services"
@@ -11,9 +11,12 @@ const RegisterForm = ()=>{
     const {register, handleSubmit,formState:{errors},reset  } = useForm({
         mode:'onChange'
     })
-    const {user, checkSession} = useContext(UserContext)
+    //Actualmente userInfo es user 
+    const {user, checkSession} = useUSer()
+    //const {user, checkSession} = useContext(UserContext)
     const [showPassword, setShowPassword] = useState(false)
     const [redirect, setRedirect] = useState(false)
+    
     
     const onSubmit = async (data) => {
         // Registrando al usuario
