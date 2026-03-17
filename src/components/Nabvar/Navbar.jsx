@@ -9,6 +9,7 @@ const Navbar = () => {
     const {loading, user} = useUSer();
 
     console.log("Usuario en Navbar:", user);
+    console.log("Cargando en Navbar:", loading);
 
     return(
         <header>
@@ -22,11 +23,16 @@ const Navbar = () => {
                 </div>
                 <div className='navbar-end gap-3'>
                     {
-                       user?.useUSer 
+                       user?.isAdmin && ( 
+                        <a className='btn btn-primary'>Dashboard</a>)
                     }
-                    <a className='btn btn-primary'>Dashboard</a>
+                    
                     <Cart />
-                    <UserDropDown/>
+                    {
+                        //Revisar si efectivamente sale el icono de perfil cuando esta  logueado o no
+                        !loading && user?.username && <UserDropDown/>
+                    }
+                    
 
                 </div>
             </nav>
