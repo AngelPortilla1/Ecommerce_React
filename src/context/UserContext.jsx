@@ -5,7 +5,7 @@ export const UserContext = createContext();
 
 
 export const UserContextProvider = ({children}) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
 
     //Funcion para verificar la sesion del usuario 

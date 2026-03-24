@@ -7,19 +7,29 @@ const API_URL = import.meta.env.VITE_BACKEND_URL + '/auth'
 
 axios.defaults.withCredentials = true;
 
-export const LoginService = async (email, password) => {
+export const LoginService = async (data, reset , setRedirect, setUser) => {
     try {
-        const response = await axios.post(`${API_URL}/login`, 
-            { email, password },
-            { withCredentials: true }
-        );
-        
+        const response = await axios.post(`${API_URL}/login`,data,{
+            headers:{ 'Content-type': 'application/json'} ,
+             withCredentials: true,
+    });
+
+    // si la respuesta es exitosa
+        console.log('Respuesta del login:', response);
         if (response.status === 200) {
-            return response.data.user;
+            setUser(response.data);
+            reset();
+            setRedirect(true);
+            return {
+                success: true,
+                message: 'Login exitoso'
+            }
         }
     } catch (error) {
-        console.log('Error al hacer login:', error);
-        throw new Error('Error en el login: ' + error.response?.data?.error);
+        return {
+            success: false,
+            message: error.response?.data?.error || error.response?.data?.message || error.message || 'Error desconocido'
+        }
     }
 };
 
@@ -76,3 +86,4 @@ export const getProfileService = async () => {
         throw new Error('Error al obtener el perfil del usuario: ' + error.response?.data?.error || error.message);
     }
 };
+

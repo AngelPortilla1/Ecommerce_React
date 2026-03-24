@@ -9,22 +9,22 @@ const LoginForm = ()=>{
     const {register, handleSubmit,formState:{errors},reset  } = useForm({
         mode:'onChange'
     })
+    const {setUser} = useUSer()
     const [showPassword, setShowPassword] = useState(false)
-    const [loading, setLoading] = useState(false)
-    const { checkSession } = useUSer()
+    const [redirect,setRedirect] = useState(false)
+   
+
+
+
     
     const onSubmit = async (data) => {
-        try {
-            setLoading(true)
-            await LoginService(data.email, data.password)
-            // Después del login exitoso, verificar la sesión
-            await checkSession()
-            reset()
-        } catch (error) {
-            console.error("Error al iniciar sesión:", error)
-            alert(error.message)
-        } finally {
-            setLoading(false)
+        //Logueando al usuario
+
+        const result = await LoginService(data, reset, setRedirect, setUser);
+        if (result.success) {
+            toast.success(result.message);
+        } else {
+            toast.error(result.message);
         }
     }
 
