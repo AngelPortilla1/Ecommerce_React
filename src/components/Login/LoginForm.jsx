@@ -9,7 +9,7 @@ const LoginForm = ()=>{
     const {register, handleSubmit,formState:{errors},reset  } = useForm({
         mode:'onChange'
     })
-    const {setUser} = useUSer()
+    const {setUser,user} = useUSer()
     const [showPassword, setShowPassword] = useState(false)
     const [redirect,setRedirect] = useState(false)
    
@@ -26,6 +26,16 @@ const LoginForm = ()=>{
         } else {
             toast.error(result.message);
         }
+    }
+
+    if(redirect && user.isAdmin){
+        //return <Navigate to="/admin/dashboard" />
+
+    }
+
+    if(redirect && !user.isAdmin){
+        //return <Navigate to="/ " />
+
     }
 
     return(
