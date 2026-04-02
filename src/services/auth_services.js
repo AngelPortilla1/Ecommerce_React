@@ -76,7 +76,8 @@ export const getProfileService = async () => {
         const response = await axios.get(`${API_URL}/profile`, {
             withCredentials: true  // ← CRÍTICO
         });
-        return response.data;
+        // Solo devolvemos el objeto user
+        return response.data.user;
     } catch (error) {
         // 401 es un caso normal cuando no hay autenticación
         if (error.response?.status === 401) {
