@@ -8,8 +8,6 @@ const Navbar = () => {
 
     const {loading, user} = useUSer();
 
-    console.log("Usuario en Navbar:", user);
-    console.log("Cargando en Navbar:", loading);
 
     return(
         <header>
