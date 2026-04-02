@@ -1,4 +1,10 @@
+import { useUser } from "../../context/UserContext";
+import toast from 'react-hot-toast'
+import { LogoutService } from "../../services/auth_services";
+
+
 const UserDropDown = () => {
+    const { setUser}= useUser();
 
     return(
         <div className="dropdown dropdown-end">
@@ -17,7 +23,11 @@ const UserDropDown = () => {
                         <a className="justify-between">Configuracion</a>
                     </li>
                     <li>
-                        <a className="justify-between">Cerrar Sesión</a>
+                        <a onClick={async () => {
+                            await LogoutService();
+                            setUser(null);
+                            toast.success('Sesión cerrada exitosamente');
+                        }} className="justify-between">Cerrar Sesión</a>
                     </li> 
                 </ul>
                 
