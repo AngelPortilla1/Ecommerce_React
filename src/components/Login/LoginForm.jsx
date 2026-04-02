@@ -2,30 +2,34 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 import { LoginService } from "../../services/auth_services"
-import { useUSer } from "../../context/UserContext"
+import { useUser } from "../../context/UserContext"
+import toast from 'react-hot-toast'
 
 
 const LoginForm = ()=>{
     const {register, handleSubmit,formState:{errors},reset  } = useForm({
         mode:'onChange'
     })
-    const {setUser,user} = useUSer()
+    const {checkSession, user} = useUser()
     const [showPassword, setShowPassword] = useState(false)
     const [redirect,setRedirect] = useState(false)
+    const [loading, setLoading] = useState(false)
    
 
 
 
     
     const onSubmit = async (data) => {
+        setLoading(true);
         //Logueando al usuario
 
-        const result = await LoginService(data, reset, setRedirect, setUser);
+        const result = await LoginService(data, reset, setRedirect, checkSession);
         if (result.success) {
             toast.success(result.message);
         } else {
             toast.error(result.message);
         }
+        setLoading(false);
     }
 
     if(redirect && user.isAdmin){

@@ -45,4 +45,4 @@ export const UserContextProvider = ({children}) => {
     </UserContext.Provider>
     )
 }   
-export const useUSer = () => useContext(UserContext)
+export const useUser = () => useContext(UserContext)

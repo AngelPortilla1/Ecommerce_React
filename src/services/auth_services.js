@@ -7,7 +7,7 @@ const API_URL = import.meta.env.VITE_BACKEND_URL + '/auth'
 
 axios.defaults.withCredentials = true;
 
-export const LoginService = async (data, reset , setRedirect, setUser) => {
+export const LoginService = async (data, reset , setRedirect, checkSession) => {
     try {
         const response = await axios.post(`${API_URL}/login`,data,{
             headers:{ 'Content-type': 'application/json'} ,
@@ -17,7 +17,7 @@ export const LoginService = async (data, reset , setRedirect, setUser) => {
     // si la respuesta es exitosa
         console.log('Respuesta del login:', response);
         if (response.status === 200) {
-            setUser(response.data);
+            await checkSession();
             reset();
             setRedirect(true);
             return {
