@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 import { LoginService } from "../../services/auth_services"
 import { useUser } from "../../context/UserContext"
+import { Navigate } from "react-router-dom"
 import toast from 'react-hot-toast'
 
 
@@ -32,14 +33,12 @@ const LoginForm = ()=>{
         setLoading(false);
     }
 
-    if(redirect && user.isAdmin){
-        //return <Navigate to="/admin/dashboard" />
-
+    if (redirect && user?.isAdmin) {
+        return <Navigate to="/admin/dashboard" />
     }
 
-    if(redirect && !user.isAdmin){
-        //return <Navigate to="/ " />
-
+    if (redirect && user && !user.isAdmin) {
+        return <Navigate to="/home" />
     }
 
     return(

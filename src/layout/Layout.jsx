@@ -1,4 +1,5 @@
 import Sidebar from "../components/Sidebar/Sidebar";
+import Navbar from "../components/Nabvar/Navbar";
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
@@ -9,7 +10,10 @@ const Layout = () => {
 
             {/* Main Content Area */}
             <div className="flex-1 ml-72 bg-white min-h-screen relative overflow-x-hidden">
-                <main className="p-12">
+                {/* Fixed Top Action Bar */}
+                <Navbar />
+
+                <main className="p-12 pt-28">
                     <Outlet />
                 </main>
                 

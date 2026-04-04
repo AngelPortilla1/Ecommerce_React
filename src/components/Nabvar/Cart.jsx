@@ -1,53 +1,26 @@
+import { Link } from 'react-router-dom';
+import { FiShoppingBag } from 'react-icons/fi';
+
 const Cart = () => {
+    // Aquí podrías obtener la cantidad de productos de tu contexto de carrito
+    const itemCount = 2; 
+
     return (
-        <>
-        <div className="flex-none">
-            <div className="dropdown dropdown-end">
-                <div
-                    tabIndex={0}
-                    role="button"
-                    className="btn btn-success btn-circle">
-                        <div className="Indicator">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                {' '}
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                                />{' '}
-                            </svg>
-                            <span className="badge badge-sm indicator-item">
-                              2  
-                            </span>
-
-                        </div>
+        <div className="relative group">
+            <Link to="/cart" className="flex items-center gap-3 bg-white border-4 border-black px-6 py-2 shadow-hard hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all group">
+                <FiShoppingBag className="text-xl group-hover:scale-110 transition-transform" />
+                <div className="flex flex-col items-start leading-none">
+                    <span className="text-[10px] font-black uppercase tracking-tighter">STORAGE_SYSTEM</span>
+                    <span className="text-sm font-black italic">CART_[{itemCount}]</span>
                 </div>
-                <div tabIndex={0} className="card card-compact dropdown-content bg-base-100-z-[1000] mt-3 w-52 shadow">
-                    <div className="card-body">
-                        <span className='text-lg font-bold'>2 item</span>
-                        <span className="text-info">Subtotal: $300</span>
-                        <div className="card-actions">
-                            <button className="btn btn-primary btn-block">
-                                Ver Carrito
-                            </button>
-                        </div>
-
-                    </div>
-
+                
+                {/* Contador flotante estilo "Pop" */}
+                <div className="absolute -top-3 -right-3 bg-secondary border-4 border-black px-2 py-0.5 text-xs font-black italic shadow-hard group-hover:bg-primary group-hover:text-white transition-colors">
+                    {itemCount < 10 ? `0${itemCount}` : itemCount}
                 </div>
-
-            </div>
-
+            </Link>
         </div>
-        </>
-    )
-}
+    );
+};
 
-export default Cart
+export default Cart;
