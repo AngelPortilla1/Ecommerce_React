@@ -27,24 +27,24 @@ const Home = () => {
             <section className="relative min-h-[80vh] border-b-4 border-black overflow-hidden flex items-center justify-between px-18 bg-white text-black">
                 <div className="z-10 max-w-2xl">
                     <h2 className="text-8xl font-space-grotesk font-bold leading-[0.85] uppercase -ml-1">
-                        FUTURE <br />
-                        <span className="bg-secondary px-4 py-1 italic shadow-hard inline-block my-2">SYNTHETIC</span> <br />
+                        FUTURO <br />
+                        <span className="bg-secondary px-4 py-1 italic shadow-hard inline-block my-2">SINTÉTICO</span> <br />
                         STREETWEAR
                     </h2>
                     
                     <div className="mt-12 flex gap-12 items-start">
                         <div className="w-1 bg-primary h-24"></div>
                         <p className="text-xs font-bold uppercase tracking-widest max-w-[280px] leading-relaxed">
-                            Redefining the digital avatar through physical utility. Disrupting traditional retail since V0.1.
+                            Redefiniendo el avatar digital a través de la utilidad física. Alterando el retail tradicional desde la V0.1.
                         </p>
                     </div>
 
                     <div className="mt-12 flex gap-4">
                         <button className="bg-primary text-white border-4 border-black px-8 py-4 font-bold uppercase text-sm shadow-hard-lg hover:shadow-none transition-all">
-                            ENTER THE VOID
+                            ENTRA AL VACÍO
                         </button>
                         <button className="bg-white text-black border-4 border-black px-8 py-4 font-bold uppercase text-sm shadow-hard-lg hover:shadow-none transition-all">
-                            VIEW LOOKBOOK
+                            VER LOOKBOOK
                         </button>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ const Home = () => {
                 <div className="absolute right-0 top-0 w-1/2 h-full bg-surface-light border-l-4 border-black hidden lg:block">
                     <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=1000&auto=format&fit=crop" alt="Hero sneaker" className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" />
                     <div className="absolute top-10 right-10 bg-black text-white p-8 border-4 border-primary">
-                         <span className="text-xl font-bold uppercase italic leading-none">NEW DROP<br/>ALERT</span>
+                         <span className="text-xl font-bold uppercase italic leading-none">ALERTA<br/>NUEVO DROP</span>
                     </div>
                 </div>
             </section>
@@ -61,16 +61,16 @@ const Home = () => {
             {/* MARQUEE */}
             <div className="bg-secondary border-b-4 border-black py-4 overflow-hidden whitespace-nowrap">
                 <div className="animate-[marquee_20s_linear_infinite] inline-block">
-                    <span className="text-2xl font-space-grotesk font-black uppercase mx-8 italic">HYPER-LINKED // TECH-SPEC // V0.1 DISRUPTION // HYPER-LINKED // TECH-SPEC // V0.1 DISRUPTION //</span>
-                    <span className="text-2xl font-space-grotesk font-black uppercase mx-8 italic">HYPER-LINKED // TECH-SPEC // V0.1 DISRUPTION // HYPER-LINKED // TECH-SPEC // V0.1 DISRUPTION //</span>
+                    <span className="text-2xl font-space-grotesk font-black uppercase mx-8 italic">HIPER-VINCULADO // ESPEC-TECNICA // V0.1 DISRUPCIÓN // HIPER-VINCULADO // ESPEC-TECNICA // V0.1 DISRUPCIÓN //</span>
+                    <span className="text-2xl font-space-grotesk font-black uppercase mx-8 italic">HIPER-VINCULADO // ESPEC-TECNICA // V0.1 DISRUPCIÓN // HIPER-VINCULADO // ESPEC-TECNICA // V0.1 DISRUPCIÓN //</span>
                 </div>
             </div>
 
             {/* FEATURED DROPS */}
             <section className="p-18 bg-white text-black">
                 <header className="flex justify-between items-end border-b-4 border-black pb-4 mb-16">
-                    <h3 className="text-6xl font-space-grotesk font-bold italic italic-heavy uppercase leading-none">FEATURED_DROPS</h3>
-                    <span className="text-xs font-bold uppercase">BATCH #004</span>
+                    <h3 className="text-6xl font-space-grotesk font-bold italic italic-heavy uppercase leading-none">LANZAMIENTOS_DESTACADOS</h3>
+                    <span className="text-xs font-bold uppercase">LOTE #004</span>
                 </header>
 
                 <div className="grid grid-cols-12 gap-12">
@@ -98,7 +98,7 @@ const Home = () => {
                         {/* Smaller product */}
                         <div className="border-4 border-black p-0 group">
                              <div className="relative border-b-4 border-black aspect-square overflow-hidden bg-gray-50">
-                                 <span className="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-2 py-1 uppercase z-10">BEST SELLER</span>
+                                 <span className="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-2 py-1 uppercase z-10">MÁS VENDIDO</span>
                                  <img src={products[1].image} alt={products[1].name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                              </div>
                              <div className="p-6 flex justify-between items-center group-hover:bg-gray-50 transition-colors">
@@ -115,19 +115,19 @@ const Home = () => {
                             {isAuthenticated() ? (
                                 <>
                                     <h4 className="text-5xl font-space-grotesk font-black uppercase leading-none italic">
-                                        WELCOME BACK,<br/>{user?.username || 'AGENT'}
+                                        BIENVENIDO,<br/>{user?.username || 'AGENTE'}
                                     </h4>
                                     <p className="text-xs font-bold uppercase mt-4">TUS DROPS EXCLUSIVOS ESTÁN LISTOS PARA SER DESBLOQUEADOS.</p>
                                     <button className="bg-black text-white p-4 font-bold uppercase text-xs flex items-center justify-center gap-2 group mt-auto z-10 hover:bg-primary transition-colors">
-                                        SOLO PARA MIEMBROS
+                                        ACCESO_PRIVADO
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                                     </button>
                                 </>
                             ) : (
                                 <>
-                                    <h4 className="text-5xl font-space-grotesk font-black uppercase leading-none italic">MEMBER<br/>ACCESS<br/>ONLY</h4>
+                                    <h4 className="text-5xl font-space-grotesk font-black uppercase leading-none italic">SOLO PARA<br/>MIEMBROS</h4>
                                     <button className="bg-black text-white p-4 font-bold uppercase text-xs flex items-center justify-center gap-2 group z-10 hover:bg-primary transition-colors">
-                                        VERIFY IDENTITY
+                                        VERIFICAR IDENTIDAD
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                     </button>
                                 </>
@@ -135,16 +135,15 @@ const Home = () => {
                             <span className="absolute -bottom-10 -right-10 text-[200px] font-black text-black opacity-5 pointer-events-none">V0</span>
                         </div>
                    </div>
-
                 </div>
             </section>
 
             {/* THREE COLUMN SPECS */}
             <section className="px-18 py-24 bg-white grid grid-cols-3 gap-12">
                  {[
-                    { id: "01", title: "FABRICATION", text: "ALL GARMENTS ARE CONSTRUCTED USING 400GSM HEAVYWEIGHT COTTON OR RECYCLED TECHNICAL NYLON. RIGOROUSLY TESTED IN URBAN ENVIRONMENTS." },
-                    { id: "02", title: "AUTHENTICITY", text: "EVERY PRODUCT INCLUDES AN EMBEDDED NFC CHIP FOR DIGITAL VERIFICATION AND EXCLUSIVE CONTENT ACCESS ON THE NEO-ZINE BLOCKCHAIN." },
-                    { id: "03", title: "LOGISTICS", text: "PRIORITY WORLDWIDE SHIPPING VIA SECURE CARRIER. PACKAGED IN REUSABLE VACUUM-SEALED ANTISTATIC COMPOSITE BAGS." }
+                    { id: "01", title: "FABRICACIÓN", text: "TODAS LAS PRENDAS ESTÁN CONSTRUIDAS CON ALGODÓN PESADO DE 400GSM O NYLON TÉCNICO RECICLADO. PROBADAS EN ENTORNOS URBANOS." },
+                    { id: "02", title: "AUTENTICIDAD", text: "CADA PRODUCTO INCLUYE UN CHIP NFC PARA VERIFICACIÓN DIGITAL Y ACCESO EXCLUSIVO EN LA BLOCKCHAIN NEO-ZINE." },
+                    { id: "03", title: "LOGÍSTICA", text: "ENVÍO MUNDIAL PRIORITARIO VÍA TRANSPORTE SEGURO. EMPAQUETADO EN BOLSAS ANTIESTÁTICAS REUTILIZABLES." }
                  ].map(item => (
                     <div key={item.id} className="relative border-4 border-black p-10 group hover:bg-black hover:text-white transition-colors">
                         <span className="absolute -top-6 left-6 bg-black text-white px-3 py-1 text-xl font-bold border-4 border-black group-hover:bg-secondary group-hover:text-black">{item.id}</span>
@@ -157,12 +156,12 @@ const Home = () => {
             {/* MANIFESTO / NEWSLETTER */}
             <section className="mx-18 mb-24 relative overflow-hidden bg-black text-white p-24 border-4 border-black shadow-hard-xl">
                  <div className="relative z-10 max-w-xl">
-                     <h3 className="text-7xl font-space-grotesk font-black italic uppercase leading-none mb-8">JOIN THE<br/><span className="text-secondary">MANIFESTO</span></h3>
-                     <p className="font-bold uppercase text-xs mb-12 tracking-widest text-gray-400">GET NOTIFIED OF SECRET DROPS AND ARCHIVE SALES BEFORE THEY GO PUBLIC.</p>
+                     <h3 className="text-7xl font-space-grotesk font-black italic uppercase leading-none mb-8">ÚNETE AL<br/><span className="text-secondary">MANIFIESTO</span></h3>
+                     <p className="font-bold uppercase text-xs mb-12 tracking-widest text-gray-400">RECIBE NOTIFICACIONES DE DROPS SECRETOS Y VENTAS PRIVADAS ANTES DE QUE SEAN PÚBLICAS.</p>
                      
                      <div className="flex border-4 border-white">
-                        <input type="email" placeholder="EMAIL ADDRESS" className="flex-1 bg-transparent p-6 outline-none font-bold text-sm uppercase placeholder:text-gray-700" />
-                        <button className="bg-primary text-white border-l-4 border-white px-12 font-bold uppercase transition-colors hover:bg-white hover:text-black">SUBSCRIBE</button>
+                        <input type="email" placeholder="DIRECCIÓN DE CORREO" className="flex-1 bg-transparent p-6 outline-none font-bold text-sm uppercase placeholder:text-gray-700" />
+                        <button className="bg-primary text-white border-l-4 border-white px-12 font-bold uppercase transition-colors hover:bg-white hover:text-black">SUSCRIBIRSE</button>
                      </div>
                  </div>
                  {/* Background image for texture */}

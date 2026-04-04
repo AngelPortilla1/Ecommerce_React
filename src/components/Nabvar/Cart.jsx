@@ -10,8 +10,8 @@ const Cart = () => {
             <Link to="/cart" className="flex items-center gap-3 bg-white border-4 border-black px-6 py-2 shadow-hard hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all group">
                 <FiShoppingBag className="text-xl group-hover:scale-110 transition-transform" />
                 <div className="flex flex-col items-start leading-none">
-                    <span className="text-[10px] font-black uppercase tracking-tighter">STORAGE_SYSTEM</span>
-                    <span className="text-sm font-black italic">CART_[{itemCount}]</span>
+                    <span className="text-[10px] font-black uppercase tracking-tighter">SISTEMA_ALMACÉN</span>
+                    <span className="text-sm font-black italic">BOLSA_[{itemCount}]</span>
                 </div>
                 
                 {/* Contador flotante estilo "Pop" */}

@@ -7,14 +7,14 @@ const AuthButton = () => {
             className="bg-black text-white border-4 border-black px-6 py-2 font-black text-xs uppercase shadow-hard hover:bg-primary hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all" 
             to="/login"
         >
-            LOGIN_ACCESS
+            ACCESO_LOGIN
         </Link>
         <div className="text-black font-black text-xl">/</div>
         <Link 
             className="bg-white text-black border-4 border-black px-6 py-2 font-black text-xs uppercase shadow-hard hover:bg-secondary hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all" 
             to="/register"
         >
-            RECRUIT_SIGNUP
+            REGISTRO_NUEVO
         </Link>
     </div>
     )

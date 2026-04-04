@@ -15,7 +15,7 @@ const Navbar = () => {
                     <svg className="w-5 h-5 mr-3 text-black group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     <input 
                         type="text" 
-                        placeholder="SEARCH_SYSTEM..." 
+                        placeholder="BUSCAR_EN_EL_SISTEMA..." 
                         className="bg-transparent outline-none text-[10px] font-black uppercase w-64 placeholder:text-gray-400" 
                     />
                     <span className="text-[10px] font-black bg-black text-white px-1 ml-2">V0.1</span>
@@ -43,7 +43,7 @@ const Navbar = () => {
                                     <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
                                 </div>
                                 <div className="hidden lg:block leading-none">
-                                    <p className="text-[8px] font-black text-gray-400 uppercase">ACCESS_GRANTED</p>
+                                    <p className="text-[8px] font-black text-gray-400 uppercase">ACCESO_CONCEDIDO</p>
                                     <p className="text-xs font-black uppercase">{user.username}</p>
                                 </div>
                             </div>

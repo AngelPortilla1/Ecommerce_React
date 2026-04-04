@@ -11,10 +11,10 @@ const Sidebar = () => {
     const [showUserMenu, setShowUserMenu] = useState(false);
 
     const menuItems = [
-        { name: 'SHOP', path: '/shop', icon: <FiShoppingBag /> },
-        { name: 'DROPS', path: '/home', icon: <HiCheckBadge /> }, // Assuming Home represents Drops
-        { name: 'ARCHIVE', path: '/archive', icon: <FiClock /> },
-        { name: 'ABOUT', path: '/about', icon: <FiInfo /> },
+        { name: 'TIENDA', path: '/shop', icon: <FiShoppingBag /> },
+        { name: 'LANZAMIENTOS', path: '/home', icon: <HiCheckBadge /> }, // Assuming Home represents Drops
+        { name: 'ARCHIVO', path: '/archive', icon: <FiClock /> },
+        { name: 'INFO', path: '/about', icon: <FiInfo /> },
     ];
 
     const isActive = (path) => location.pathname === path;
@@ -28,7 +28,7 @@ const Sidebar = () => {
                         NEO-YHAMAR
                     </h1>
                     <p className="text-[10px] font-bold text-gray-400 tracking-[0.25em] uppercase">
-                        VO.1 EDITION
+                        EDICIÓN VO.1
                     </p>
                 </div>
 
@@ -60,7 +60,7 @@ const Sidebar = () => {
             <div className="flex flex-col gap-2 px-0 pb-4">
                 <button className="group flex items-center gap-5 px-4 py-5 font-black text-xl tracking-tight uppercase hover:bg-gray-100 hover:translate-x-1 transition-all">
                     <FiSearch className="text-2xl group-hover:scale-110 transition-transform" />
-                    SEARCH
+                    BUSCAR
                 </button>
                 
                 <div className="relative">
@@ -70,7 +70,7 @@ const Sidebar = () => {
                     >
                         <FiUser className="text-2xl group-hover:scale-110 transition-transform" />
                         <span className="truncate">
-                             {user?.username ? user.username : 'PROFILE'}
+                             {user?.username ? user.username : 'PERFIL'}
                         </span>
                     </button>
                     {showUserMenu && user?.username && (
