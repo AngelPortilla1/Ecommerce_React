@@ -6,7 +6,7 @@ const Login = () => {
             <div className="w-full max-w-[500px]">
                 <header className="mb-12 text-center">
                     <h1 className="text-7xl font-space-grotesk font-black uppercase italic leading-none mb-4">
-                        SYSTEM_<br/><span className="text-primary">ACCESS</span>
+                        ACCESO_AL<br/><span className="text-primary">SISTEMA</span>
                     </h1>
                     <div className="h-2 w-24 bg-black mx-auto"></div>
                     <p className="mt-4 text-xs font-bold uppercase tracking-widest text-gray-500">
