@@ -44,84 +44,81 @@ const LoginForm = ()=>{
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}
-        className="mt-8 flex flex-col gap-4 lg:gap-6 max-w-[500px] mx-auto">
-             <div>
+        className="flex flex-col gap-6">
+             <div className="relative group">
+                <label className="block text-[10px] font-black uppercase tracking-widest text-black mb-2 px-1">EMAIL_IDENTIFIER</label>
                 <input {...register("email",{
                     required: "El email es obligatorio",
                     pattern: {value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Ingresa un email válido"}
                 })}
                         className=" w-full
-                                    rounded-lg
-                                    bg-[#1f2430]
-                                    border border-gray-600
-                                    px-3 py-2
-                                    text-gray-100
+                                    bg-white
+                                    border-4 border-black
+                                    p-4
+                                    font-bold
+                                    text-sm
+                                    uppercase
                                     placeholder-gray-400
-                                    transition
+                                    transition-all
                                     duration-200
-                                    ease-in-out
-                                    focus:border-primary
-                                    focus:ring-2
-                                    focus:ring-primary/50
-                                    focus:outline-none
-                                    hover:border-gray-400"
+                                    outline-none
+                                    focus:bg-secondary
+                                    focus:shadow-hard
+                                    hover:translate-x-1"
                         autoComplete="email" 
                         name="email" 
-                        placeholder="Correo electrónico"
+                        placeholder="INGRESA TU CORREO"
                         type="email" />
                         {errors.email && (
-                            <p className="text-white-500 text-sm mt-1">{errors.email.message}</p>
+                            <p className="text-red-500 text-[10px] font-black uppercase mt-1 px-1 tracking-tighter">{errors.email.message}</p>
                         )}
             </div>
 
-            <div>
+            <div className="relative group">
+                <label className="block text-[10px] font-black uppercase tracking-widest text-black mb-2 px-1">SECURITY_HASH</label>
                 <div className="relative">
                     <input {...register("password",{
                         required: "La contraseña es obligatoria",
                         minLength:{value: 6, message: "La contraseña debe tener al menos 6 caracteres"}
                     })}
                             className=" w-full
-                                        rounded-lg
-                                        bg-[#1f2430]
-                                        border border-gray-600
-                                        px-3 py-2
-                                        text-gray-100
+                                        bg-white
+                                        border-4 border-black
+                                        p-4
+                                        font-bold
+                                        text-sm
+                                        uppercase
                                         placeholder-gray-400
-                                        transition
+                                        transition-all
                                         duration-200
-                                        ease-in-out
-                                        focus:border-primary
-                                        focus:ring-2
-                                        focus:ring-primary/50
-                                        focus:outline-none
-                                        hover:border-gray-400"
-                            autoComplete="new-password" 
+                                        outline-none
+                                        focus:bg-secondary
+                                        focus:shadow-hard
+                                        hover:translate-x-1"
+                            autoComplete="current-password" 
                             name="password" 
-                            placeholder="Contraseña"
+                            placeholder="INGRESA TU PASSWORD"
                             type={showPassword ? "text" : "password"} />
                     <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-300"
+                        className="absolute right-4 top-4 text-black hover:text-primary transition-colors"
                     >
-                        {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+                        {showPassword ? <FaEyeSlash size={24} /> : <FaEye size={24} />}
                     </button>
                 </div>
                         {errors.password && (
-                            <p className="text-white-500 text-sm mt-1">{errors.password.message}</p>
+                            <p className="text-red-500 text-[10px] font-black uppercase mt-1 px-1 tracking-tighter">{errors.password.message}</p>
                         )}
             </div>
-                <button type="submit" 
-                        disabled={loading}
-                        className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-white py-2 px-4 rounded-lg transition duration-200" >
-                    {loading ? 'Iniciando sesión...' : 'Iniciar Sesion'}
-                </button>  
 
-            
+            <button type="submit" 
+                    disabled={loading}
+                    className="w-full bg-primary text-white border-4 border-black p-5 font-black uppercase text-sm shadow-hard-lg hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed mt-4" >
+                {loading ? 'AUTENTICANDO...' : 'UNLEASH THE POWER'}
+            </button>  
         </form>
     )
-    
-
 }
 
 export default LoginForm

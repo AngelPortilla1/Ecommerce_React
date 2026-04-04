@@ -2,11 +2,32 @@ import LoginForm from "../components/Login/LoginForm"
 
 const Login = () => {
     return(
-        <div className="mt-16">
-            <h1 className="text-xl font-bold text-center">Iniciar Sesión</h1>
-            <LoginForm/>
-        </div>
+        <div className="min-h-[80vh] flex flex-col items-center justify-center p-6 bg-white">
+            <div className="w-full max-w-[500px]">
+                <header className="mb-12 text-center">
+                    <h1 className="text-7xl font-space-grotesk font-black uppercase italic leading-none mb-4">
+                        SYSTEM_<br/><span className="text-primary">ACCESS</span>
+                    </h1>
+                    <div className="h-2 w-24 bg-black mx-auto"></div>
+                    <p className="mt-4 text-xs font-bold uppercase tracking-widest text-gray-500">
+                        INGRESA TUS CREDENCIALES PARA CONTINUAR
+                    </p>
+                </header>
+                
+                <div className="bg-white border-4 border-black p-8 shadow-hard-xl relative">
+                    {/* Decoración Neo-Brutalista */}
+                    <div className="absolute -top-6 -right-6 bg-secondary border-4 border-black px-4 py-1 font-bold text-sm italic shadow-hard z-10">
+                        V0.1 LOGIN
+                    </div>
+                    
+                    <LoginForm/>
+                </div>
 
+                <p className="mt-8 text-center text-xs font-bold uppercase">
+                    ¿NO TIENES UNA CUENTA? <a href="/register" className="text-primary hover:underline underline-offset-4">CREAR ACCESO</a>
+                </p>
+            </div>
+        </div>
     )
 }
 
