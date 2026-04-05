@@ -3,22 +3,29 @@ import UserDropDown from './UserDropDown.jsx';
 import AuthButton from './authButton.jsx';
 import { Link } from 'react-router-dom';
 import { useUser } from '../../context/UserContext.jsx';
+import { FiMenu } from 'react-icons/fi';
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
     const { loading, user } = useUser();
 
     return (
-        <header className="fixed top-0 right-0 left-72 z-40 bg-white/80 backdrop-blur-md border-b-4 border-black px-12 py-5 flex items-center justify-between">
-            {/* Search System Section */}
-            <div className="flex items-center gap-6">
-                <div className="flex items-center border-4 border-black px-4 py-2 bg-gray-50 group hover:bg-white transition-colors">
+        <header className="fixed top-0 right-0 left-0 md:left-72 z-40 bg-white/80 backdrop-blur-md border-b-4 border-black px-4 md:px-12 py-4 md:py-5 flex items-center justify-between">
+            {/* Mobile Menu & Search Section */}
+            <div className="flex items-center gap-4">
+                <button 
+                    onClick={toggleSidebar}
+                    className="md:hidden p-2 border-4 border-black hover:bg-secondary transition-colors"
+                >
+                    <FiMenu size={24} />
+                </button>
+
+                <div className="hidden sm:flex items-center border-4 border-black px-4 py-2 bg-gray-50 group hover:bg-white transition-colors">
                     <svg className="w-5 h-5 mr-3 text-black group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     <input
                         type="text"
                         placeholder="BUSCAR..."
-                        className="bg-transparent outline-none text-[10px] font-black uppercase w-64 placeholder:text-gray-400"
+                        className="bg-transparent outline-none text-[10px] font-black uppercase w-32 lg:w-64 placeholder:text-gray-400"
                     />
-                    <span className="text-[10px] font-black bg-black text-white px-1 ml-2">V0.1</span>
                 </div>
             </div>
 

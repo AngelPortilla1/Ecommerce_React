@@ -24,27 +24,27 @@ const Home = () => {
     return (
         <div className="bg-white">
             {/* HERO SECTION */}
-            <section className="relative min-h-[80vh] border-b-4 border-black overflow-hidden flex items-center justify-between px-18 bg-white text-black">
-                <div className="z-10 max-w-2xl">
-                    <h2 className="text-8xl font-space-grotesk font-bold leading-[0.85] uppercase -ml-1">
+            <section className="relative min-h-[70vh] md:min-h-[80vh] border-b-4 border-black overflow-hidden flex flex-col md:flex-row items-center justify-between px-6 md:px-18 py-12 md:py-0 bg-white text-black">
+                <div className="z-10 max-w-2xl text-center md:text-left">
+                    <h2 className="text-5xl sm:text-6xl md:text-8xl font-space-grotesk font-bold leading-[0.9] md:leading-[0.85] uppercase -ml-1">
                         FUTURO <br />
-                        <span className="bg-secondary px-4 py-1 italic shadow-hard inline-block my-2">SINTÉTICO</span> <br />
+                        <span className="bg-secondary px-4 py-1 italic shadow-hard inline-block my-2 text-3xl sm:text-4xl md:text-7xl">SINTÉTICO</span> <br />
                         STREETWEAR
                     </h2>
                     
-                    <div className="mt-12 flex gap-12 items-start">
-                        <div className="w-1 bg-primary h-24"></div>
-                        <p className="text-xs font-bold uppercase tracking-widest max-w-[280px] leading-relaxed">
+                    <div className="mt-8 md:mt-12 flex flex-col md:flex-row gap-6 md:gap-12 items-center md:items-start text-center md:text-left">
+                        <div className="hidden md:block w-1 bg-primary h-24"></div>
+                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest max-w-[280px] leading-relaxed">
                             Redefiniendo el avatar digital a través de la utilidad física. Alterando el retail tradicional desde la V0.1.
                         </p>
                     </div>
 
-                    <div className="mt-12 flex gap-4">
+                    <div className="mt-8 md:mt-12 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <button className="bg-primary text-white border-4 border-black px-8 py-4 font-bold uppercase text-sm shadow-hard-lg hover:shadow-none transition-all">
                             ENTRA AL VACÍO
                         </button>
                         <button className="bg-white text-black border-4 border-black px-8 py-4 font-bold uppercase text-sm shadow-hard-lg hover:shadow-none transition-all">
-                            VER LOOKBOOK
+                            LOOKBOOK
                         </button>
                     </div>
                 </div>
@@ -67,27 +67,27 @@ const Home = () => {
             </div>
 
             {/* FEATURED DROPS */}
-            <section className="p-18 bg-white text-black">
-                <header className="flex justify-between items-end border-b-4 border-black pb-4 mb-16">
-                    <h3 className="text-6xl font-space-grotesk font-bold italic italic-heavy uppercase leading-none">LANZAMIENTOS_DESTACADOS</h3>
-                    <span className="text-xs font-bold uppercase">LOTE #004</span>
+            <section className="p-6 md:p-18 bg-white text-black">
+                <header className="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b-4 border-black pb-4 mb-8 md:mb-16 gap-4">
+                    <h3 className="text-3xl sm:text-4xl md:text-6xl font-space-grotesk font-bold italic uppercase leading-none">LANZAMIENTOS_DESTACADOS</h3>
+                    <span className="text-[10px] md:text-xs font-black bg-black text-white px-2 py-1 uppercase">LOTE #004</span>
                 </header>
 
-                <div className="grid grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                    {/* Main Product */}
-                   <div className="col-span-8 group">
+                   <div className="md:col-span-8 group">
                         <div className="relative border-4 border-black overflow-hidden aspect-[4/5] bg-gray-100">
                              <img src={products[0].image} alt={products[0].name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                              <div className="absolute bottom-10 right-10 bg-secondary px-6 py-2 border-4 border-black shadow-hard">
                                 <span className="text-2xl font-space-grotesk font-bold">{products[0].price}</span>
                              </div>
                         </div>
-                        <div className="flex mt-8 border-4 border-black">
-                             <div className="flex-1 p-8">
-                                <h4 className="text-4xl font-space-grotesk font-bold uppercase tracking-tight">{products[0].name}</h4>
-                                <p className="text-[10px] font-bold uppercase text-gray-500 mt-2">{products[0].spec}</p>
+                        <div className="flex mt-4 md:mt-8 border-4 border-black">
+                             <div className="flex-1 p-4 md:p-8">
+                                <h4 className="text-2xl md:text-4xl font-space-grotesk font-bold uppercase tracking-tight">{products[0].name}</h4>
+                                <p className="text-[8px] md:text-[10px] font-bold uppercase text-gray-500 mt-2">{products[0].spec}</p>
                              </div>
-                             <button className="w-32 bg-black text-white flex items-center justify-center hover:bg-primary transition-colors">
+                             <button className="w-20 md:w-32 bg-black text-white flex items-center justify-center hover:bg-primary transition-colors">
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                              </button>
                         </div>
@@ -139,7 +139,7 @@ const Home = () => {
             </section>
 
             {/* THREE COLUMN SPECS */}
-            <section className="px-18 py-24 bg-white grid grid-cols-3 gap-12">
+            <section className="px-6 md:px-18 py-12 md:py-24 bg-white grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
                  {[
                     { id: "01", title: "FABRICACIÓN", text: "TODAS LAS PRENDAS ESTÁN CONSTRUIDAS CON ALGODÓN PESADO DE 400GSM O NYLON TÉCNICO RECICLADO. PROBADAS EN ENTORNOS URBANOS." },
                     { id: "02", title: "AUTENTICIDAD", text: "CADA PRODUCTO INCLUYE UN CHIP NFC PARA VERIFICACIÓN DIGITAL Y ACCESO EXCLUSIVO EN LA BLOCKCHAIN NEO-ZINE." },
@@ -154,14 +154,14 @@ const Home = () => {
             </section>
 
             {/* MANIFESTO / NEWSLETTER */}
-            <section className="mx-18 mb-24 relative overflow-hidden bg-black text-white p-24 border-4 border-black shadow-hard-xl">
+            <section className="mx-6 md:mx-18 mb-12 md:mb-24 relative overflow-hidden bg-black text-white p-8 md:p-24 border-4 border-black shadow-hard-xl">
                  <div className="relative z-10 max-w-xl">
-                     <h3 className="text-7xl font-space-grotesk font-black italic uppercase leading-none mb-8">ÚNETE AL<br/><span className="text-secondary">MANIFIESTO</span></h3>
-                     <p className="font-bold uppercase text-xs mb-12 tracking-widest text-gray-400">RECIBE NOTIFICACIONES DE DROPS SECRETOS Y VENTAS PRIVADAS ANTES DE QUE SEAN PÚBLICAS.</p>
+                     <h3 className="text-4xl sm:text-5xl md:text-7xl font-space-grotesk font-black italic uppercase leading-none mb-8">ÚNETE AL<br/><span className="text-secondary">MANIFIESTO</span></h3>
+                     <p className="font-bold uppercase text-[10px] md:text-xs mb-8 md:mb-12 tracking-widest text-gray-400">RECIBE NOTIFICACIONES DE DROPS SECRETOS ANTES DE QUE SEAN PÚBLICAS.</p>
                      
-                     <div className="flex border-4 border-white">
-                        <input type="email" placeholder="DIRECCIÓN DE CORREO" className="flex-1 bg-transparent p-6 outline-none font-bold text-sm uppercase placeholder:text-gray-700" />
-                        <button className="bg-primary text-white border-l-4 border-white px-12 font-bold uppercase transition-colors hover:bg-white hover:text-black">SUSCRIBIRSE</button>
+                     <div className="flex flex-col sm:flex-row border-4 border-white">
+                        <input type="email" placeholder="CORREO_ELECTRÓNICO" className="flex-1 bg-transparent p-4 md:p-6 outline-none font-bold text-xs md:text-sm uppercase placeholder:text-gray-700" />
+                        <button className="bg-primary text-white border-t-4 sm:border-t-0 sm:border-l-4 border-white px-8 md:px-12 py-4 md:py-0 font-bold uppercase transition-colors hover:bg-white hover:text-black">SUSCRIBIRSE</button>
                      </div>
                  </div>
                  {/* Background image for texture */}
