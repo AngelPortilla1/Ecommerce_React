@@ -4,21 +4,13 @@ import { LogoutService } from "../../services/auth_services";
 import { FiLogOut, FiUser, FiSettings } from "react-icons/fi";
 
 const UserDropDown = () => {
-    const { setUser, user }= useUser();
+    const { setUser, user } = useUser();
 
     const handleLogout = async () => {
         try {
             await LogoutService();
             setUser(null);
-            toast.success('SESIÓN CERRADA // ACCESS_REVOKED', {
-                style: {
-                    border: '4px solid black',
-                    padding: '16px',
-                    color: 'black',
-                    fontWeight: 'bold',
-                    borderRadius: '0px'
-                }
-            });
+            toast.success('SESIÓN CERRADA');
         } catch (error) {
             toast.error('ERROR AL CERRAR SESIÓN');
         }
@@ -30,7 +22,7 @@ const UserDropDown = () => {
                 <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">USUARIO_ACTIVO</p>
                 <p className="font-black uppercase text-sm truncate">{user?.username || 'AGENTE_V0'}</p>
             </header>
-            
+
             <ul className="flex flex-col gap-1">
                 <li className="group">
                     <button className="w-full flex items-center justify-between px-4 py-3 font-black text-xs uppercase transition-all hover:bg-secondary hover:translate-x-1">
@@ -45,7 +37,7 @@ const UserDropDown = () => {
                     </button>
                 </li>
                 <li className="mt-2 pt-2 border-t-4 border-black">
-                    <button 
+                    <button
                         onClick={handleLogout}
                         className="w-full flex items-center justify-between px-4 py-3 font-black text-xs uppercase bg-black text-white hover:bg-primary transition-all hover:translate-x-1"
                     >

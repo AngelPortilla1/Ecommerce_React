@@ -21,7 +21,35 @@ function App(){
             
           </Route>
     </Routes>
-    <Toaster position='top-right' reverseOrder={false} />
+    <Toaster 
+      position='top-right' 
+      reverseOrder={false} 
+      toastOptions={{
+        style: {
+          borderRadius: '0px',
+          border: '4px solid black',
+          padding: '16px',
+          color: 'black',
+          background: 'white',
+          fontWeight: '900',
+          fontFamily: 'Space Grotesk',
+          textTransform: 'uppercase',
+          boxShadow: '4px 4px 0px 0px #000000',
+        },
+        success: {
+          iconTheme: {
+            primary: 'black',
+            secondary: '#bef264', // secondary Lime from tailwind.config
+          },
+        },
+        error: {
+          iconTheme: {
+            primary: 'black',
+            secondary: '#ff4b4b', // Custom Red for errors
+          },
+        },
+      }}
+    />
     </UserContextProvider>
     
     
