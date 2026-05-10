@@ -7,20 +7,23 @@ import Layout from './layout/Layout';
 import Login from './pages/Login';
 import { UserContextProvider } from './context/UserContext';
 import { Toaster } from 'react-hot-toast';
+import { ProductProvider } from './context/ProductContext.jsx';
 
 
 function App(){
   return (
     <UserContextProvider>
-      <Routes>
-        <Route element={<Layout/>}>
-            <Route path="/home" element={<Home/>}></Route>
-            {/* <Route path="/login" element={<Login/>}></Route> */}
-            <Route path="/register" element={<Register/>}></Route>
-            <Route path="/login" element={<Login/>}></Route>
-            
-          </Route>
-    </Routes>
+      <ProductProvider>
+        <Routes>
+                <Route element={<Layout/>}>
+                    <Route path="/home" element={<Home/>}></Route>
+                    {/* <Route path="/login" element={<Login/>}></Route> */}
+                    <Route path="/register" element={<Register/>}></Route>
+                    <Route path="/login" element={<Login/>}></Route>
+                    
+                  </Route>
+            </Routes>
+      </ProductProvider>
     <Toaster 
       position='top-right' 
       reverseOrder={false} 
