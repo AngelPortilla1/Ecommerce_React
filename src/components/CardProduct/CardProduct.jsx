@@ -35,6 +35,9 @@ const CardProduct = ({ id, name, price, imageUrl, description, stock }) => {
                     <Link to={`/detailproducts/${id}`} className="bg-black text-white border-4 border-black px-4 py-2 font-bold uppercase text-xs hover:bg-primary transition-colors inline-block">
                         VER MÁS
                     </Link>
+                    <button className="bg-black text-white border-4 border-black px-4 py-2 font-bold uppercase text-xs hover:bg-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled={stock === 0}>
+                        {stock === 0 ? 'Sin stock' : 'Agregar'}
+                    </button>
                 </div>
             </div>
         </div>
