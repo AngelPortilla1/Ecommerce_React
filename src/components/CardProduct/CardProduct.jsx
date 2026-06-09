@@ -32,9 +32,9 @@ const CardProduct = ({ id, name, price, imageUrl, description, stock }) => {
                 <p className="text-xs font-bold uppercase text-gray-500 mb-4 line-clamp-2">{description}</p>
                 <div className="flex justify-between items-center">
                     <span className="text-lg font-space-grotesk font-bold">{price}</span>
-                    <button className="bg-black text-white border-4 border-black px-4 py-2 font-bold uppercase text-xs hover:bg-primary transition-colors">
+                    <Link to={`/detailproducts/${id}`} className="bg-black text-white border-4 border-black px-4 py-2 font-bold uppercase text-xs hover:bg-primary transition-colors inline-block">
                         VER MÁS
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
