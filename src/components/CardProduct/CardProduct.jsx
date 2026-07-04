@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useProducts } from '../../context/ProductContext.jsx';
 import { useUser } from '../../context/UserContext.jsx';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const CardProduct = ({ id, name, price, imageUrl, description, stock }) => {
     const { isAuthenticated } = useUser();
+    const { productsLoading } = useProducts();
+
+    const handleAddToCart = () => {
+        console.log('Agregar al carrito:', id);
+        // Aquí puedes llamar a tu contexto de carrito o una función de servicio.
+    };
 
     console.log('CardProduct imageUrl:', imageUrl);
     console.log('IMAGE URL =>', imageUrl);
@@ -35,7 +42,12 @@ const CardProduct = ({ id, name, price, imageUrl, description, stock }) => {
                     <Link to={`/detailproducts/${id}`} className="bg-black text-white border-4 border-black px-4 py-2 font-bold uppercase text-xs hover:bg-primary transition-colors inline-block">
                         VER MÁS.
                     </Link>
-                    <button className="bg-black text-white border-4 border-black px-4 py-2 font-bold uppercase text-xs hover:bg-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled={loading || stock === 0}>
+                    <button
+                        className="bg-black text-white border-4 border-black px-4 py-2 font-bold uppercase text-xs hover:bg-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={productsLoading || stock === 0}
+                        onClick={handleAddToCart}
+                    >
+                        <FaShoppingCart className="inline-block mr-2" size={16}/>
                         {stock === 0 ? 'Sin stock' : 'Agregar'}
                     </button>
                 </div>
